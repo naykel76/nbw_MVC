@@ -1,0 +1,25 @@
+<IfModule mod_rewrite.c>
+  #RewriteEngine on
+  #RewriteRule ^$ public/ [L]
+  #RewriteRule (.*) public/$1 [L]
+</IfModule>
+
+
+# this currently routes everything through index.php
+
+<IfModule mod_rewrite.c>
+  Options -Multiviews
+  
+  RewriteEngine On
+  RewriteBase /nbw_mvc/app
+
+  # this redirect is basically an if statement that routes
+  # everything through index.php unless otherwise specified
+  # IF(url/filename.php == found) {then go to it}
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+  # else {redirect to index.php}
+    RewriteRule  ^(.+)$ index.php?url=$1 [QSA,L]
+
+
+</IfModule>

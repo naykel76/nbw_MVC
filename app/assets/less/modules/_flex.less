@@ -1,0 +1,29 @@
+.flexCon{
+	display: flex;
+	justify-content: space-between; // this is used to space out icon lists.
+	
+	&.cols{
+		flex-wrap: wrap;
+		
+		&.cols-2 > *{
+			width: 45%;
+		}
+	}
+	
+	// this hack is useful for coding side by side
+	pre + pre{
+		margin-left: 20px;
+	}
+
+	.flex-item{
+		padding: 25px;
+	}	
+}
+
+
+.flexCon + .flexCon{
+	margin-top: 25px;
+}
+
+.flex-ctr{justify-content: center;}
+.flex-right{margin-left: auto;}

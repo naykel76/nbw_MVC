@@ -1,0 +1,204 @@
+// ============================================================== -->
+// Gutters and spacing
+// ============================================================== -->
+// gutter variables are used throughout the styling to standardise positioning
+@gutter-sm:                          0.5rem;
+@gutter:                             1.0rem;
+@gutter-md:                          2.0rem;
+@gutter-lg:                          3.0rem;
+@gutter-xl:                          5.0rem;
+@gutter-xxl:                         7.0rem;
+
+// ============================================================== -->
+// Theme Colours
+// ============================================================== -->
+
+/* RGB */
+@primary-color:  rgba(0, 48, 73, 1);
+@secondary-color: rgba(247, 127, 0, 1);
+@alt-color:  rgba(214, 40, 40, 1);
+// @alt-color: rgba(252, 191, 73, 1);
+// @alt-color: rgba(234, 226, 183, 1);
+
+/* RGB */
+// $color1: rgba(246, 81, 29, 1);
+// $color2: rgba(255, 180, 0, 1);
+// $color3: rgba(0, 166, 237, 1);
+// $color4: rgba(127, 184, 0, 1);
+// $color5: rgba(13, 44, 84, 1);
+
+@footer-color: 										#ccc;
+
+
+
+// @primary-color:                                     #2f5572;
+@primary-text-color:                                #fff;
+@primary-hover-color:                               #d9d9d9;
+@primary-border:                                    1px solid darken(@primary-color, 10%);
+
+// @secondary-color:                                   #e78c45; // ORANGE
+@secondary-text-color:                              #fff;
+@secondary-hover-color:                             #d9d9d9;
+@secondary-border:                                  1px solid darken(@secondary-color, 10%);
+
+// @alt-color:                                         #8e4eae;
+@alt-text:                               	        #fff;
+@alt-hover-color:                                   #d9d9d9;
+@alt-border:                                        1px solid darken(@alt-color, 10%);
+
+// light scheme
+@light-color: 			                            #666;
+@light-bg: 					                        #fafafa;
+@light-heading-color: 	                            #444;
+@light-border: 										1px solid darken(@light-bg, 10%);
+
+// dark scheme
+@dark-color: 						    			#ddd;
+@dark-hover-color:                  				#fff;
+@dark-bg: 									        #222;
+@dark-heading-color: 								#d897f7;
+@dark-border: 										1px solid lighten(@dark-bg, 25%);
+
+
+.primary {
+    background-color: @primary-color;
+    color: @primary-text-color;
+    border: @primary-border;
+
+    .heading{
+        color: @dark-heading-color;
+    }
+    
+    a{
+        color: @primary-text-color;
+        
+        &:hover{
+            color: @primary-hover-color;
+        }
+    }
+}
+
+.secondary {
+    background-color: @secondary-color;
+    color: @secondary-text-color;
+    border: @secondary-border;
+    
+    .heading{}    
+    a{
+        color: @secondary-text-color;
+        
+        &:hover{
+            color: @secondary-hover-color;
+        }
+    }
+}
+
+.alt {
+    background-color: @alt-color;
+    color: @alt-text;
+    border: @alt-border;
+
+    a{
+        color: @alt-text;
+        
+        &:hover{
+            color: @alt-hover-color;
+        }
+    }
+}
+
+
+// Greens
+@green-bg: 			#ad3; //lime greendisplay: block;
+
+.dark{
+
+    a{
+        color: #fafafa;
+        
+        &:hover{
+            color: #999;    
+        }
+
+    }
+
+    .heading{
+        color: @dark-heading-color;
+    }
+
+    background-color: @dark-bg;
+    color: @dark-color;
+    border: @dark-border;
+}
+
+.light{
+    background-color: @light-bg;
+    color: @light-color;
+    border: @light-border;
+}
+
+
+// purple blue 		32388E
+// purple pink 		F50C68
+// orange pink 		F25135
+// Orange      		F7961D
+// green            8BA216
+
+// ============================================================== -->
+// BreakPoints
+// ============================================================== -->
+
+@xs-screen: 300px;
+@sm-screen: 568px;
+@md-screen: 768px;
+@lg-screen: 992px;
+@xl-screen: 1200px;
+
+// @small-only: (@md-screen - 1);// upto tablet but not including
+@small-only: 767px;// upto tablet but not including
+@media only screen (max-width: @small-only){}
+// 568+
+@media (min-width: @sm-screen) {}
+// 768+
+@media (min-width: @md-screen) {}
+// 992+
+@media (min-width: @lg-screen) {}
+// 1200+
+@media (min-width: @xl-screen) {}
+
+@phone: (min-width: @sm-screen) ;
+
+// ============================================================== -->
+// 
+// ============================================================== -->
+
+@black: #000;
+
+
+.b1{background: lighten(@black,25%);}
+.b2{background: lighten(@black,30%);}
+.b3{background: lighten(@black,35%);}
+.b4{background: lighten(@black,40%);}
+.b5{background: lighten(@black,45%);}
+.b6{background: lighten(@black,50%);}
+.b7{background: lighten(@black,55%);}
+.b8{background: lighten(@black,60%);}
+.b9{background: lighten(@black,65%);}
+.b10{background: lighten(@black,70%);}
+.b11{background: lighten(@black,75%);}
+.b12{background: lighten(@black,80%);}
+.b13{background: lighten(@black,85%);}
+.b14{background: lighten(@black,90%);}
+.b15{background: lighten(@black,95%);}
+
+// This is for sample boxes and testing
+.bg1{background: @primary-color;}
+.bg2{background: lighten(@primary-color,5%);}
+.bg3{background: lighten(@primary-color,10%);}
+.bg4{background: lighten(@primary-color,15%);}
+.bg5{background: lighten(@primary-color,20%);}
+.bg6{background: lighten(@primary-color,25%);}
+.bg7{background: lighten(@primary-color,30%);}
+.bg8{background: lighten(@primary-color,35%);}
+.bg9{background: lighten(@primary-color,40%);}
+.bg10{background: lighten(@primary-color,45%);}

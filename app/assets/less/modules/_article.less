@@ -1,0 +1,61 @@
+article{
+
+	h1{
+		margin-bottom: @gutter-md;
+		font-weight: 700;
+		color: @secondary-color;
+	}
+
+	h2{
+		margin-top: @gutter-lg;
+		margin-bottom: @gutter;
+	}
+
+	h3{
+		margin-top: @gutter-lg;
+		font-size: 1.5rem;
+	}
+
+	.edit{
+		position: absolute;
+		right: 45px;
+	}
+
+	// lists
+	ul, ol{
+		max-width: 40rem; /*  increase readability */
+		padding-left: 40px;
+		list-style: disc; 
+
+	    li{
+	    	margin-bottom: 5px;
+	    }
+	    
+	    // nested list
+	    ul {
+	    	margin-top: 5px;
+			list-style: circle;
+	    }
+	}
+	ol{
+		list-style-type: decimal;
+	}
+
+	
+}
+
+
+.article{
+	.nav .header{
+		font-size: 1.5em;
+	    padding: 0 .5em;
+	    font-weight: 500;
+	}
+}
+.author{
+	font-size: .8em;
+	color: #999;
+	border-bottom: 1px solid #ccc;
+	margin-bottom: 35px;
+}
+

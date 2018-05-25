@@ -1,0 +1,70 @@
+.btn{
+  font: inherit;
+  color: #666;
+  display: inline-block;
+  padding: 2px 12px;
+  height: auto; // overide default button height and use padding
+  font-size: 1rem;
+  text-decoration: none;
+  text-align: center;
+  border: 1px solid rgba(0,0,0,.2);
+  background: #f7f7f7;
+  font-weight: 500;
+    
+	&:hover{
+		background: #efefef;
+		color: #666; // required to override 'a' tag
+    	outline: 0;
+    	text-decoration: none;
+	}
+
+	&:focus {
+		outline: 0; // remove glow
+	}
+
+	&-primary{
+
+		.primary(); // colour scheme set in variables
+		
+		&:hover{
+			color: @primary-text-color;
+			border: @primary-border;
+			background: lighten(@primary-color, 10%);
+		}
+
+		&:active{
+			color: @primary-text-color;
+			border: @primary-border;
+			background: lighten(@primary-color, 2%);
+		}
+	}
+
+	&-secondary{
+
+		.secondary(); // colour scheme set in variables
+		
+		&:hover{
+			color: @secondary-text-color;
+			border: @secondary-border;
+			background: lighten(@secondary-color, 10%);
+			background: red;
+		}
+	}
+
+	&-stretch{
+		display: block;
+		width: 100%;
+	}
+
+}
+
+
+.btn-lg {
+  padding: 0.75rem 1.5rem;
+  font-size: 1.25rem;
+}
+
+.btn-sm {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+}

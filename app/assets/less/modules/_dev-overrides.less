@@ -1,0 +1,35 @@
+// ============================================================== -->
+// Style overrides for testing and development
+// ============================================================== -->
+.dev{
+
+	#header,#middle, #footer, #navbar, #header-top, #logo, #main-nav{min-height: 40px;}
+
+	#header{
+		.b12();
+	}
+
+	#top {
+		&-a{.b13();}
+		&-b{.b14();}
+	}
+
+	#middle{
+		.b13();
+		
+	}
+
+	#bottom {
+		&-a{.b14();}
+		&-b{.b13();}
+	}
+
+	#footer{
+		.b12();
+	}
+
+}
+
+#devMsg{
+	.alert();
+}

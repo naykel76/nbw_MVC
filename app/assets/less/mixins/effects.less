@@ -1,0 +1,20 @@
+// ============================================================== -->
+// Shaddows
+// ============================================================== -->
+
+// @x = horizontal distance
+// @y = vertical distance
+// @b = blur distance
+// @c = colour rbga()
+
+// use commas to overide
+
+.box-shadow (@x: 5px, @y: 5px, @b: 5px, @c: rgba(0, 0, 0, 0.4)) {
+    -webkit-box-shadow: @x @y @b @c;
+    -moz-box-shadow: @x @y @b @c;
+    box-shadow: @x @y @b @c;
+}
+
+.bx-shadow{
+	.box-shadow();
+}

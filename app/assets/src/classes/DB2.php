@@ -1,0 +1,171 @@
+<?php 
+
+/*
+	This class is built on the singleton pattern where you get the instance of
+	the database if it has already been instantiated rather than connecting to
+	the database on each page.
+*/
+
+class DB2{
+
+	public $test = "You Got This!";
+
+	private static $instance = null; // store the instance of db if available
+
+	private $db, // store the instantiated db object so it can be stored and used elseware
+			$query, // the last query executed
+			$error = false,
+			$results, // store the result set retuned from the query
+			$resultsCount = 0;
+
+   
+	private function __construct() {
+
+		try {
+			$this->db = new PDO("mysql:host=".DB_HOST."; dbname=".DB_NAME, DB_USER, DB_PASS);
+			
+			// echo "<h5>Connected successfully</h5>";
+		} catch(PDOException $e) {
+			die($e->getMessage());
+		}
+		
+	}
+
+	// check to see if object has been instatiated
+	public static function getInstance() {
+
+		if (!isset(self::$instance)) {
+			self::$instance = new DB2();
+		}
+
+		return self::$instance;
+	}
+
+	// https://www.youtube.com/watch?v=PaBWDOBFxDc&list=PLfdtiltiRHWF5Rhuk7k4UAU1_yLAZzhWc&index=8
+	public function query($sql, $params = array()) {
+		$this->error = false;
+
+		if($this->query = $this->db->prepare($sql)) { // store query in query parameter
+			$x = 1;
+
+			// loop to parameters to bind
+			if(count($params)) {
+				foreach($params as $param) {
+					$this->query->bindValue($x, $param); // bind position x to parameter
+					$x++; // position counter for bind position loop
+				}
+			}
+
+			if($this->query->execute()) { // run stored query
+				// echo "<h5>The query has been run successfully</h5>";
+				
+				$this->results = $this->query->fetchAll(PDO::FETCH_OBJ); // return results as object and set $results patemeter
+				$this->resultsCount = $this->query->rowCount();
+			} else {
+				$this->error = true;
+			}
+		}
+
+		return $this;
+	}
+
+
+	public function action($action, $table, $where = array()) {
+		if(count($where) === 3) {
+			$operators = array('=', '>', '<', '>=', '<=');
+
+			$field 	  = $where[0];
+			$operator = $where[1];
+			$value    = $where[2];
+
+			if(in_array($operator, $operators)) {
+				$sql = "{$action} FROM {$table} WHERE {$field} {$operator} ?";
+
+				if(!$this->query($sql, array($value))->error()) {
+					return $this;
+				}
+			}
+
+		}
+
+		return false;
+	}
+
+	public function delete($table, $where) {
+		return $this->action('DELETE ', $table, $where);
+	}
+
+	public function get($table, $where) {
+		return $this->action('SELECT *', $table, $where);
+	}
+
+
+	public function results() {
+		return $this->results;
+	}
+
+	public function first() {
+		$data = $this->results();
+		return $data[0];
+	}
+
+	public function count() {
+		return $this->resultsCount;
+	}
+
+	public function error() {
+		return $this->error;
+	}
+
+
+	public function insert($table, $fields = array()) {
+			
+		$keys = array_keys($fields);// keep track of question marks inside query
+		$placeholders = ''; // bind placeholders 
+		$x = 1;
+
+		foreach ($fields as $field) {
+			$placeholders .= '?'; // add question mark for each placeholder
+
+			// check to find last placeholder and prevent (,)
+			if($x < count($fields)) { 
+				$placeholders .= ', ';
+			}
+
+			$x++;
+		}
+
+		$sql = "INSERT INTO $table (`" . implode('`, `', $keys) . "`) VALUES ({$placeholders})";
+
+		if(!$this->query($sql, $fields)->error()) {
+            return true;
+        }
+
+    	return false;
+
+	}
+
+	public function update($table, $id, $fields) {
+		$set = '';
+		$x = 1;
+
+		// build up update string
+		foreach($fields as $name => $value) {
+			$set .= "{$name} = ?";
+			if($x < count ($fields)) {
+				$set .= ', ';
+			}
+			$x++;
+		}
+
+		$sql = "UPDATE {$table} SET {$set} WHERE id = {$id}";
+
+		if(!$this->query($sql, $fields)->error()) {
+			return true;
+		}
+
+		return false;
+	}
+
+
+}

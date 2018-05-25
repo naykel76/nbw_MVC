@@ -1,0 +1,64 @@
+// ============================================================== -->
+// Table base styles
+// ============================================================== -->
+table {
+	border-collapse: collapse;
+	background-color: transparent;
+	width: 100%;
+	border-spacing: 0;
+	margin-bottom: @gutter; // *** STOP CHANGING ***
+}
+
+caption {
+	padding-top: 0.75rem;
+	padding-bottom: 0.75rem;
+	text-align: left;
+}
+
+
+
+th,
+td {
+	padding: .5em;
+	border: 1px solid #afafaf;
+	text-align: left;
+	vertical-align: top;
+	// border: 1px solid red;
+}
+
+// remove margins and allow the tables to do the work
+table p{margin: 0;}
+table + table {margin-top: @gutter-md;}
+
+// ============================================================== -->
+// Table Modifiers
+// ============================================================== -->
+
+.tbl{
+
+	
+	&-striped {
+		
+		border: 1px solid #afafaf; // outer border
+		
+		th, td{
+			border-left: 0;
+			border-right: 0;
+		}
+		
+		tbody tr:nth-of-type(even) {
+		border: none;
+			background: #dee2e6;
+		}
+
+		tbody tr:hover{
+			background: rgba(0, 0, 0, 0.07);
+		}
+	}
+
+}
+
+
+.stf{ // shrink to fit
+	width: auto;
+}

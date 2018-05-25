@@ -1,0 +1,143 @@
+// ============================================================== -->
+// Variables
+// ============================================================== -->
+
+@navbar-color: 				#fff;
+@navbar-hover-bg: 			transparent;
+@navbar-hover-color: 		#4D9F8C;
+
+// Nav padding
+@navpad-tb: 				0.25rem;
+@navpad-lr: 				1rem;
+
+// ============================================================== -->
+// .nav - for vertical style navigation
+// this is the basis of all navs
+// ============================================================== -->
+
+// this is to allow coloured sidebars
+[class*="col-"] > .nav{
+	// background: green;
+	margin: 0 -@navpad-lr;
+}
+
+ul.nav{
+
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	
+	li{
+		padding-bottom: 0; // let base ul li do the work
+		
+		a{
+			padding: @navpad-tb @navpad-lr;
+			
+			// background: rgba(200,200,200,0.1);
+			&:hover{
+				color: red;
+				background: rgba(255,55,55,0.05);
+			}
+		}
+	}
+
+	li.heading{
+		color: #afafaf;
+		padding: 0 @navpad-lr;
+		font-size: 1.2rem;
+	}
+}
+
+// ============================================================== -->
+// .flexnav - for horizontal style navigation
+// ============================================================== -->
+
+.flexnav{
+    display: flex;
+
+	
+    // add divider line
+	> li:nth-child(n+2){
+		border-left: 1px solid #E5E5E5;
+	}
+
+	// nav-items
+	li a{
+		// padding: @navpad-tb @navpad-lr;
+		background: rgba(200,200,200,0.1);
+		&:hover{}
+
+		&.heading{
+			cursor: default;
+		}
+	}
+
+}
+
+
+// ============================================================== -->
+// Main site navigation
+// ============================================================== -->
+
+#main-nav{
+	margin-left: auto;
+	
+	.flexnav{
+
+		li a{
+
+			padding: 8px;
+			color: #FFF;
+			font-size: 1rem;
+			padding-left: 10px;
+			
+			&:hover{
+				color: #ccc;
+			}
+		}
+	}
+}
+
+
+
+
+// ============================================================== -->
+// navbar nav
+// ============================================================== -->
+
+#navbar{
+
+	li{border: none;}// remove divider
+	
+	li a{
+		padding: 5px 15px;
+
+		&:hover{
+			// set by theme colours
+		}
+
+	}
+
+	// set colour scheme
+	.dd{
+		.dark();
+	}
+}
+
+
+// ============================================================== -->
+nav.side{
+	position: fixed;
+	left: 0;
+	padding: 1em;
+}
+
+.parent > a:after {
+    content: "\f078";
+    margin-left: 5px;
+    font-family: FontAwesome;
+    font-size: .6em;
+}
+
+
+

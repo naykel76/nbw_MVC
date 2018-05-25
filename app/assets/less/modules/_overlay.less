@@ -1,0 +1,26 @@
+.overlay{
+	position: relative;
+	display: block; // need to be block to remove inline-block margin ** review??
+	margin: 0;
+}
+
+.overlay-bg{
+	background: rgba(0,0,0,0.1);
+}
+
+
+.overlay-txt{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	padding: 20px;
+	color: #FFF;
+	
+	&.mid-ctr{
+		top: 25%;
+		width: 100%;
+		text-align: center;
+	}
+}

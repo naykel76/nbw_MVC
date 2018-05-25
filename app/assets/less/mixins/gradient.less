@@ -1,0 +1,79 @@
+//******************************************************************************************
+// Gradients
+//******************************************************************************************
+
+.gradient (@startColor: #eee, @endColor: red) {
+	background-color: @startColor;
+	background: -webkit-gradient(linear, left top, left bottom, from(@startColor), to(@endColor));
+	background: -webkit-linear-gradient(top, @startColor, @endColor);
+	background: -moz-linear-gradient(top, @startColor, @endColor);
+	background: -ms-linear-gradient(top, @startColor, @endColor);
+}
+
+
+.gradient-angle2 (@startcolor: grey, @endcolor: green){
+	background: @startcolor;
+	background: -webkit-linear-gradient(left top, @startcolor, @endcolor);
+	background: -o-linear-gradient(bottom right, @startcolor, @endcolor);
+	background: -moz-linear-gradient(bottom right, @startcolor, @endcolor);
+	background: linear-gradient(to bottom right, @startcolor, @endcolor);
+	  
+	.purple-pink (@startcolor: #f50c68, @endcolor: #32388e){
+		background: @startcolor;
+		background: -webkit-linear-gradient(left top, @startcolor, @endcolor);
+		background: -o-linear-gradient(bottom right, @startcolor, @endcolor);
+		background: -moz-linear-gradient(bottom right, @startcolor, @endcolor);
+		background: linear-gradient(to bottom right, @startcolor, @endcolor);
+	}
+
+	// .aqua-purple (@startcolor: #4D9F8C, @endcolor: #8E4EAE){
+	// 	background: @startcolor;
+	// 	background: -webkit-linear-gradient(left top, @startcolor, @endcolor);
+	// 	background: -o-linear-gradient(bottom right, @startcolor, @endcolor);
+	// 	background: -moz-linear-gradient(bottom right, @startcolor, @endcolor);
+	// 	background: linear-gradient(to bottom right, @startcolor, @endcolor);
+	// }
+
+	.aqua-purple (@startcolor: #4D9F8C, @middlecolor: #8E4EAE, @endcolor: #f54f91){
+		background: @startcolor;
+		background: -webkit-linear-gradient(left top, @startcolor, @middlecolor, @endcolor);
+		background: -o-linear-gradient(bottom right, @startcolor, @middlecolor, @endcolor);
+		background: -moz-linear-gradient(bottom right, @startcolor, @middlecolor, @endcolor);
+		background: linear-gradient(to bottom right, @startcolor, @middlecolor, @endcolor);
+	}
+}
+
+// Tri colour
+.gradient-angle3 (@startcolor: grey, @middlecolor: blue, @endcolor: green){
+	background: @startcolor;
+	background: -webkit-linear-gradient(left top, @startcolor, @middlecolor, @endcolor);
+	background: -o-linear-gradient(bottom right, @startcolor, @middlecolor, @endcolor);
+	background: -moz-linear-gradient(bottom right, @startcolor, @middlecolor, @endcolor);
+	background: linear-gradient(to bottom right, @startcolor, @middlecolor, @endcolor);
+	  
+	.purple-orange-pink (@startcolor: #f50c68, @middlecolor: orange, @endcolor: #32388e){
+		background: @startcolor;
+		background: -webkit-linear-gradient(left top, @startcolor, @middlecolor, @endcolor);
+		background: -o-linear-gradient(bottom right, @startcolor, @middlecolor, @endcolor);
+		background: -moz-linear-gradient(bottom right, @startcolor, @middlecolor, @endcolor);
+		background: linear-gradient(to bottom right, @startcolor, @middlecolor, @endcolor);
+	}
+
+	// .aqua-purple (@startcolor: #4D9F8C, @middlecolor: orange, @endcolor: #32388e){
+	// 	background: @startcolor;
+	// 	background: -webkit-linear-gradient(left top, @startcolor, @middlecolor, @endcolor);
+	// 	background: -o-linear-gradient(bottom right, @startcolor, @middlecolor, @endcolor);
+	// 	background: -moz-linear-gradient(bottom right, @startcolor, @middlecolor, @endcolor);
+	// 	background: linear-gradient(to bottom right, @startcolor, @middlecolor, @endcolor);
+	// }
+}
+
+
+
+
+
+
+
+
+
+
