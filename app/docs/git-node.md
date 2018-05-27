@@ -17,8 +17,9 @@ Create repository > change repo location (if required) > upload repo
 |                      |                                   |                                                  |
 
 ### Eliminate passwords
+- set up ssh key
 - change the remote origin to remove https://
-git remote set-url origin git@github.com/naykel76/nbw_MVC.git
+git remote set-url origin git@github.com:naykel76/nbw_MVC.git
 
 
 
@@ -42,25 +43,6 @@ a pull request is a command to merge one branch into another
 | Merge branch -GIThub |                            |       |
 
 
-
-
-
-
-# Work flow Set-up
-
-| Task            | Command                                              | Notes |
-|:----------------|:-----------------------------------------------------|:------|
-| Install GIT     | download and install                                 |       |
-| Initialise git  | git init                                             |       |
-| set user name   | git config --global user.name "Nathan"               |       |
-| set email       | git config --global user.email "naykel@iinet.net.au" |       |
-| Set-up github   | follow the online instructions to link               |       |
-| Install node.js | download and install                                 |       |
-| Initialise npm  | init npm                                             |       |
-| install gulp    | npm install gulp-cli --global                        |       |
-| Install gulp    | npm install gulp --save-dev                          |       |
-|                 |                                                      |       |
-|                 |                                                      |       |
 
 ##Linux Ubuntu
 - sudo apt-get install git

@@ -1,4 +1,4 @@
-git<?php
+<?php
     require_once 'assets/src/bootstrap.php';
 
     // Init Core Library
