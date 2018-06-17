@@ -16,4 +16,12 @@ class Pages extends Controller{
     }
 
 
+    public function test(){
+        
+        $data = ['title' => 'Page Title'];
+
+        $this->view('pages/test', $data);
+    }
+
+
 }

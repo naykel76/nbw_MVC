@@ -1,5 +1,11 @@
 <?php 
 
+/*
+    This class is built on the singleton pattern where you get the instance of
+    the database if it has already been instantiated rather than connecting to
+    the database on each page.
+*/
+
 class DB2{
 
     private static $instance = null; // store the instance of db if available
@@ -7,7 +13,7 @@ class DB2{
     private $db, // store the instantiated db object so it can be stored and used elseware
             $query, // the last query executed
             $error = false,
-            $_results, // store the result set retuned from the query
+            $results, // store the result set retuned from the query
             $resultsCount = 0;
 
   
@@ -52,7 +58,7 @@ class DB2{
 
             if($this->query->execute()) { // run stored query
                 // echo "<h5>The query has been run successfully</h5>";
-                $this->_results = $this->query->fetchAll(PDO::FETCH_OBJ); // return results as object and set $results patemeter
+                $this->results = $this->query->fetchAll(PDO::FETCH_OBJ); // return results as object and set $results patemeter
                 $this->resultsCount = $this->query->rowCount();
             } else {
                 $this->error = true;
@@ -92,72 +98,12 @@ class DB2{
        return $this->queryAction('SELECT *', $table, $where);
    }
 
-
     public function count() {
         return $this->resultsCount;
     }
-    
+
     public function error() {
         return $this->error;
-    }
-
-    public function results() {
-        return $this->_results;
-    }
-
-    public function first() {
-        $data = $this->results();
-        return $data[0];
-    }
-
-
-    public function insert($table, $fields = array()) {
-            
-        $keys = array_keys($fields);// keep track of question marks inside query
-        $placeholders = ''; // bind placeholders 
-        $x = 1;
-
-        foreach ($fields as $field) {
-            $placeholders .= '?'; // add question mark for each placeholder
-
-            // check to find last placeholder and prevent (,)
-            if($x < count($fields)) { 
-                $placeholders .= ', ';
-            }
-
-            $x++;
-        }
-
-        $sql = "INSERT INTO $table (`" . implode('`, `', $keys) . "`) VALUES ({$placeholders})";
-
-        if(!$this->query($sql, $fields)->error()) {
-            return true;
-        }
-
-        return false;
-
-    }
-
-    public function update($table, $id, $fields) {
-        $set = '';
-        $x = 1;
-
-        // build up update string
-        foreach($fields as $name => $value) {
-            $set .= "{$name} = ?";
-            if($x < count ($fields)) {
-                $set .= ', ';
-            }
-            $x++;
-        }
-
-        $sql = "UPDATE {$table} SET {$set} WHERE id = {$id}";
-
-        if(!$this->query($sql, $fields)->error()) {
-            return true;
-        }
-
-        return false;
     }
 
 }

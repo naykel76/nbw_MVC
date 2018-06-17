@@ -2,13 +2,68 @@
 
 /* Testing controller
     - testforms
+
+    baseURL/controller/method = baseURL/ControllerName/ControllerFunctionName
+
 */
 
 class Tests extends Controller{
+  
     public function __construct(){
-        // echo "<h5 class='txt-green'>TestController loaded!</h5>";
-        // $this->testModel = $this->model('TestModel');
+        // connect to model
+        $this->myModel = $this->model('Test');
     }
+
+
+
+    public function test(){
+        
+        $data = ['title' => 'Testing Page'];
+
+        // call the model
+        // $results = $this->Test->getResults();
+
+
+        $this->view('pages/test', $data);
+    }
+
+
+
+
+
+ /* index is the default method so there is no need to add it to the url
+       baseURL/controller/method = baseURL/testController/testMethod  */
+
+    // public function testMethod(){
+        
+    //     /* -- LOAD VIEW and PASS DATA ------------------------
+    //     | view takes 2 parameters ($view, $data = []) 
+    //     | add data to the array ['arrayItemTitle' => 'array data'] or ['key' => 'value']
+    //     | */
+
+    //     // call the model
+    //     $results = $this->testModel->getResults();
+
+    //     $data = [
+    //         'msg' => 'you have loaded the views/pages/test.php from the default view',
+    //         'people' => $results,
+    //         'firstname' => 'Nathan',
+    //         'lastname' => 'Watts'
+    //     ];
+        
+
+    //     $this->view('pages/test', $data);
+    // }
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -47,73 +102,9 @@ class Tests extends Controller{
         }
     }
 
-    public function formsub() {
+ 
 
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    /* index is the default method so there is no need to add it to the url
-       baseURL/controller = baseURL/testController  */
-
-    // public function index(){
-        
-    //     // call the model
-    //     $results = $this->testModel->getResults();
-
-    //     $data = [
-    //         'msg' => 'you have loaded the views/pages/test.php from the default view',
-    //         'people' => $results,
-    //         'firstname' => 'Nathan',
-    //         'lastname' => 'Watts'
-    //     ];
-
-    //     // call the view
-    //     $this->view('pages/test', $data);
-
-
-    // }
-
-    /* index is the default method so there is no need to add it to the url
-       baseURL/controller/method = baseURL/testController/testMethod  */
-
-    public function testMethod(){
-        
-        /* -- LOAD VIEW and PASS DATA ------------------------
-        | view takes 2 parameters ($view, $data = []) 
-        | add data to the array ['arrayItemTitle' => 'array data'] or ['key' => 'value']
-        | */
-
-        // call the model
-        $results = $this->testModel->getResults();
-
-        $data = [
-            'msg' => 'you have loaded the views/pages/test.php from the default view',
-            'people' => $results,
-            'firstname' => 'Nathan',
-            'lastname' => 'Watts'
-        ];
-        
-
-        $this->view('pages/test', $data);
-    }
+   
 
 }
 

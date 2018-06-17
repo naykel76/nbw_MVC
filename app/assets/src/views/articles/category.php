@@ -5,6 +5,7 @@
 <!doctype html>
 <html lang="en">
 <head>
+    <?php $metatitle = 'Page Title'; ?>
     <?php include_once APPROOT . '/layouts/head.php' ?>
 </head>
 <body>

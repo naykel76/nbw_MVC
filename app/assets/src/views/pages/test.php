@@ -10,6 +10,12 @@
     </header>
     <div id="middle">
         <div class="container">
+
+        <h1><?php echo $data['title']; ?></h1>
+
+
+        
+        <!-- 
             <div class="col-lg-6 col-md-8 mar-auto bx dark">
                 <h3>Log into your account</h3>
                 <p>Please fill in credentials to log in</p>
@@ -34,10 +40,11 @@
                     </div>
                 </form>
             </div>
-        </div>
+         --></div>
     </div>
     <footer id="footer">
         <?php include_once APPROOT . '/layouts/footer.php' ?>
     </footer>
 </body>
 </html>
+

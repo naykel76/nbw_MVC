@@ -9,7 +9,7 @@
     <link rel="apple-touch-icon-precomposed" href="images/favicon.ico"/>
     <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
     <script  src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-    <title>nbw MVC Framework</title>
+    <title><?php echo $metatitle; ?></title>
     <base href="<?php echo BASEURL; ?>/">
     <link rel="stylesheet" href="<?php echo BASEURL; ?>/assets/styles/styles.css">
 </head>

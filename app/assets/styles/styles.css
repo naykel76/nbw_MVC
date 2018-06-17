@@ -2321,11 +2321,6 @@ pre.prettyprint {
     -o-tab-size: 2;
        tab-size: 2;
 }
-@media (min-width: 768px) {
-  pre.prettyprint + pre.prettyprint {
-    margin-left: 20px;
-  }
-}
 .prettyprint {
   background: #000;
 }

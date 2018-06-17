@@ -1,5 +1,11 @@
 <?php 
 
+/*
+    This class is built on the singleton pattern where you get the instance of
+    the database if it has already been instantiated rather than connecting to
+    the database on each page.
+*/
+
 class DB2{
 
     private static $instance = null; // store the instance of db if available

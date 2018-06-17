@@ -12,7 +12,7 @@
     define('DB_HOST','localhost');
     define('DB_USER','root');
     define('DB_PASS','');
-    define('DB_NAME','nbw_site');
+    define('DB_NAME','nbw_mvc');
 
     define('APPROOT', $_SERVER['DOCUMENT_ROOT'] . $appRoot);
     define('BASEURL', $baseUrl);
