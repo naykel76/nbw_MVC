@@ -8,6 +8,7 @@
 */
   
   class Core {
+
     protected $currentController = 'Pages';
     protected $currentMethod = 'index';
     protected $params = [];
@@ -17,7 +18,7 @@
         $url = $this->getUrl();
         
         // Look in controllers for $url[0] value to set as $currentController
-        if(file_exists('../app/assets/src/controllers/' . ucwords($url[0]). '.php')){
+        if(file_exists(APPROOT . '/assets/src/controllers/' . ucwords($url[0]). '.php')){
             // If the file exists in controllers, set as $currentController
             $this->currentController = ucwords($url[0]);
             // Unset 0 Index
@@ -25,7 +26,7 @@
         } 
 
         // Require the controller
-        require_once '../app/assets/src/controllers/'. $this->currentController . '.php';
+        require_once APPROOT . '/assets/src/controllers/'. $this->currentController . '.php';
         // Instantiate the controller (the class in the controller)
         $this->currentController = new $this->currentController;
 

@@ -3,8 +3,6 @@
 ## Create tables and update “nbw_mvc” to the new database name
 
 
-
-
 ## Update assets/src/includes/config.php
 
 1. Site variables

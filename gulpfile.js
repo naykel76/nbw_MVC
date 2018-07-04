@@ -1,8 +1,4 @@
-// require('./gulp/build');
-// require('./gulp/build-dist');
-// require('./gulp/php');
-// require('./gulp/replace');
-// require('./gulp/scripts');
+require('./gulp/build');
 require('./gulp/styles');
 
 // Gulp dependents

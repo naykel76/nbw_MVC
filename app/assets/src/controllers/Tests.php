@@ -28,32 +28,26 @@ class Tests extends Controller{
     }
 
 
-
-
-
- /* index is the default method so there is no need to add it to the url
-       baseURL/controller/method = baseURL/testController/testMethod  */
-
-    // public function testMethod(){
+    public function testMethod(){
         
-    //     /* -- LOAD VIEW and PASS DATA ------------------------
-    //     | view takes 2 parameters ($view, $data = []) 
-    //     | add data to the array ['arrayItemTitle' => 'array data'] or ['key' => 'value']
-    //     | */
+        /* -- LOAD VIEW and PASS DATA ------------------------
+        | view takes 2 parameters ($view, $data = []) 
+        | add data to the array ['arrayItemTitle' => 'array data'] or ['key' => 'value']
+        | */
 
-    //     // call the model
-    //     $results = $this->testModel->getResults();
+        // call the model
+        $results = $this->testModel->getResults();
 
-    //     $data = [
-    //         'msg' => 'you have loaded the views/pages/test.php from the default view',
-    //         'people' => $results,
-    //         'firstname' => 'Nathan',
-    //         'lastname' => 'Watts'
-    //     ];
+        $data = [
+            'msg' => 'you have loaded the views/pages/test.php from the default view',
+            'people' => $results,
+            'firstname' => 'Nathan',
+            'lastname' => 'Watts'
+        ];
         
 
-    //     $this->view('pages/test', $data);
-    // }
+        $this->view('pages/test', $data);
+    }
 
 
 

@@ -1,4 +1,5 @@
 <?php
+
     require_once 'assets/src/bootstrap.php';
 
     // Init Core Library
